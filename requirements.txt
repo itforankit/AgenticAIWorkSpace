@@ -16,3 +16,5 @@ wikipedia
 lxml
 langchain_huggingface
 langchain_groq
+langgraph 
+typing_extensions   
