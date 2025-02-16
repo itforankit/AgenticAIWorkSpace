@@ -18,3 +18,4 @@ langchain_huggingface
 langchain_groq
 langgraph 
 typing_extensions   
+langgraph-cli[inmem]
