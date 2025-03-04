@@ -33,3 +33,10 @@ pypdf
 streamlit
 google-generativeai
 duckduckgo-search
+PyPDF2
+google-generativeai
+langchain_google_genai
+transformers
+torch
+requests
+langchain-community

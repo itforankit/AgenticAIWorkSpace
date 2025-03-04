@@ -1,0 +1,11 @@
+Install the required Python packages:
+
+pip install -r requirements.txt
+
+Set up your Google API key from https://makersuite.google.com/app/apikey by creating a .env file in the root directory of the project with the following contents:
+
+GOOGLE_API_KEY =<your-api-key-here>
+
+Run the Streamlit app:
+
+streamlit run chatapp.py
