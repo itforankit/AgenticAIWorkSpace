@@ -22,13 +22,16 @@ if API_KEY:
     genai.configure(api_key=API_KEY)
 
 # Page Configuration
-st.set_page_config(
-    page_title="Multimodal AI Agent Video Summarizer",
-    page_icon="📽️",
-    layout="wide"
-)
-st.title("Phidata Video AI Summarizer Agent 📽️")
-st.header("Powered by Gemini 2.0 Flash EXp")
+st.set_page_config(page_title= "AI Chatbot ", layout="wide")
+col1, col2 = st.columns([1, 3])
+with col1:
+    st.image(r".\Coforge.jpg")
+with col2:
+    #st.markdown("<h1 style='text-align: left;'>",self.config.get_page_title(),"</h1>", unsafe_allow_html=True)
+    st.header("AI Chatbot - Video AI Summarizer Agent")
+
+#st.title("AI Chatbot - Video AI Summarizer Agent")
+
 
 @st.cache_resource
 def initialize_agent():
@@ -50,8 +53,15 @@ if video_file:
     with tempfile.NamedTemporaryFile(delete=False, suffix='.mp4') as temp_video:
         temp_video.write(video_file.read())
         video_path = temp_video.name
-        
-    st.video(video_path, format="video/mp4", start_time=0)
+    col1, col2,col3 = st.columns([1, 2,3])
+    with col1:
+        pass
+    with col2:
+        #st.markdown("<h1 style='text-align: left;'>",self.config.get_page_title(),"</h1>", unsafe_allow_html=True)
+        st.video(video_path, format="video/mp4", start_time=0) 
+    with col3:
+        pass
+    
     
     user_query = st.text_area(
         "What insights are you seeking from this video?",

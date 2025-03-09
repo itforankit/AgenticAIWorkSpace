@@ -76,11 +76,17 @@ def user_input(user_question):
 
 
 def main():
-    st.set_page_config("Multi PDF Chatbot", page_icon = ":scroll:")
-    st.header("Multi-PDF's 📚 - Chat Agent 🤖 ")
+    # Page Configuration
+    st.set_page_config(page_title= "AI Chatbot ", layout="wide")
+    col1, col2 = st.columns([1, 3])
+    with col1:
+        st.image(r".\img\Coforge.jpg")
+    with col2:
+        #st.markdown("<h1 style='text-align: left;'>",self.config.get_page_title(),"</h1>", unsafe_allow_html=True)
+        st.header("AI Chatbot - Pdf Summarizer Agent")
 
-    user_question = st.text_input("Ask a Question from the PDF Files uploaded .. ✍️📝")
-
+    #user_question = st.text_input("Ask a Question from the PDF Files uploaded .. ✍️📝")
+    user_question = st.chat_input("Enter your message:")
     if user_question:
         user_input(user_question)
 
@@ -98,19 +104,19 @@ def main():
                 get_vector_store(text_chunks) # create vector store
                 st.success("Done")
         
-        st.write("---")
-        st.image("img/Image2.jpg")
-        st.write("AI App created by @ Ankit Singhal")  # add this line to display the image
+        # st.write("---")
+        #st.image("img/Image2.jpg")
+        #st.write("AI App created by @ Ankit Singhal")  # add this line to display the image
 
 
-    st.markdown(
-        """
-        <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #ff6262; padding: 15px; text-align: center;">
-            © <a href="https://www.linkedin.com/in/ankit0777/" target="_blank">Ankit Singhal</a> 
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    # st.markdown(
+    #     """
+    #     <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #ff6262; padding: 15px; text-align: center;">
+    #         © <a href="https://www.linkedin.com/in/ankit0777/" target="_blank">Ankit Singhal</a> 
+    #     </div>
+    #     """,
+    #     unsafe_allow_html=True
+    # )
 
 if __name__ == "__main__":
     main()
